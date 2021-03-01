@@ -19,7 +19,6 @@ public class TestBase {
     }
 
     @AfterEach
-    @Step("Attachments")
     public void afterEach(){
         attachScreenshot("Last screenshot");
         attachPageSource();
