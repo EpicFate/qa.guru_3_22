@@ -162,11 +162,11 @@ public class demoqa_com extends TestBase {
             $(".main-header").shouldHave(text("Check Box"));
         });
 
-        step("Нажимаем Expand all", () -> {
+        step("Нажимаем Expand all", (step) -> {
             $(".rct-icon-expand-all").click();
         });
 
-        step("проверяем что в списке есть Word File.doc", () -> {
+        step("проверяем что в списке есть Word File.doc", (step) -> {
             $(".rct-node-expanded").shouldHave(text("Word File.doc"));
         });
     }
