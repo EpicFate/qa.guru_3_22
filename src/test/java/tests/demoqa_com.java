@@ -17,9 +17,9 @@ import static io.qameta.allure.Allure.step;
 public class demoqa_com extends TestBase {
 
     @Test
-    @Feature("Form fill tests")
-    @Story("Student registration")
-    @DisplayName("Регистрация студента")
+    @Feature("Forms")
+    @Story("Practice Form")
+    @DisplayName("Student Registration Form")
     @Link(url = "https://demoqa.com/automation-practice-form", name = "https://demoqa.com/automation-practice-form")
 
     void StudentRegistrationForm() {
