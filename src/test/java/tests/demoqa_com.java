@@ -1,5 +1,6 @@
 package tests;
 
+import allure.Layer;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
+@Layer("web")
 @Owner("EpicFate")
 public class demoqa_com extends TestBase {
 
