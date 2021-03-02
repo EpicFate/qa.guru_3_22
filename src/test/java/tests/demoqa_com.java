@@ -3,26 +3,27 @@ package tests;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import io.qameta.allure.Link;
-import io.qameta.allure.Owner;
+import helpers.Layer;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.Locale;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class PracticeForm extends TestBase {
+@Layer("web")
+@Feature("Form fill tests")
+@Story("Student registration")
+public class demoqa_com extends TestBase {
     @Test
     @Owner("EpicFate")
     @DisplayName("Регистрация студента")
     @Link(url = "https://demoqa.com/automation-practice-form", name = "https://demoqa.com/automation-practice-form")
 
-    void Form() {
+    void StudentRegistrationForm() {
         Faker faker = new Faker();
         FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-GB"), new RandomService());
 
@@ -113,6 +114,34 @@ public class PracticeForm extends TestBase {
         $(".table-responsive").shouldHave(text("Picture" + " " + picture));
         $(".table-responsive").shouldHave(text("Address" + " " + StateCurrentAddress + CityCurrentAddress));
         $(".table-responsive").shouldHave(text("State and City" + " " + state + " " + city));
+        });
+    }
+
+    @Test
+    @Owner("EpicFate")
+    @DisplayName("radio_button")
+    @Link(url = "https://demoqa.com/radio-button", name = "https://demoqa.com/radio-button")
+
+    void radio_button() {
+
+        step("Открывем страницу c radio_button", (step) -> {
+        open("https://demoqa.com/radio-button");
+        });
+
+        step("Нажимаем на Yes", (step) -> {
+        $(byText("Yes")).click();
+        });
+
+        step("Проверяем что нажали Yes", (step) -> {
+        $(".text-success").shouldHave(text("Yes"));
+        });
+
+        step("Нажимаем Impressive", (step) -> {
+        $(byText("Impressive")).click();
+        });
+
+        step("проверяем что нажали Impressive", (step) -> {
+        $(".text-success").shouldHave(text("Impressive"));
         });
     }
 }
