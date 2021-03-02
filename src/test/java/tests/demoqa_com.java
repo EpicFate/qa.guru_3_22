@@ -19,6 +19,7 @@ import static io.qameta.allure.Allure.step;
 public class demoqa_com extends TestBase {
 
     @Test
+    @AllureId("1784")
     @Feature("Forms")
     @Story("Practice Form")
     @DisplayName("Student Registration Form")
@@ -119,6 +120,7 @@ public class demoqa_com extends TestBase {
     }
 
     @Test
+    @AllureId("1785")
     @Feature("Elements")
     @Story("radio_button")
     @DisplayName("radio_button_Yes-or-Impressive")
