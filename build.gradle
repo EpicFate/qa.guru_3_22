@@ -44,8 +44,8 @@ dependencies {
             "com.github.javafaker:javafaker:1.0.2",
             "org.aeonbits.owner:owner:1.0.12",
             "io.qameta.allure:allure-ee-junit-platform:3.28.2",
-            "org.junit.jupiter:junit-jupiter-api:${allureVersion}")
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${allureVersion}"
+            "org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.1"
 }
 
 tasks.withType(JavaCompile) {
