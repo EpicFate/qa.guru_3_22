@@ -15,12 +15,12 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Layer("web")
-
+@Owner("EpicFate")
 public class demoqa_com extends TestBase {
+
+    @Test
     @Feature("Form fill tests")
     @Story("Student registration")
-    @Test
-    @Owner("EpicFate")
     @DisplayName("Регистрация студента")
     @Link(url = "https://demoqa.com/automation-practice-form", name = "https://demoqa.com/automation-practice-form")
 
@@ -118,33 +118,33 @@ public class demoqa_com extends TestBase {
         });
     }
 
+
     @Test
     @Feature("Elements")
     @Story("radio_button")
-    @Owner("EpicFate")
     @DisplayName("radio_button_Yes-or-Impressive")
     @Link(url = "https://demoqa.com/radio-button", name = "https://demoqa.com/radio-button")
 
     void radio_button() {
 
         step("Открывем страницу c radio_button", (step) -> {
-        open("https://demoqa.com/radio-button");
+            open("https://demoqa.com/radio-button");
         });
 
-        step("Нажимаем на Yes", (step) -> {
-        $(byText("Yes")).click();
+        step("Нажимаем Yes", (step) -> {
+            $(byText("Yes")).click();
         });
 
         step("Проверяем что нажали Yes", (step) -> {
-        $(".text-success").shouldHave(text("Yes"));
+            $(".text-success").shouldHave(text("Yes"));
         });
 
         step("Нажимаем Impressive", (step) -> {
-        $(byText("Impressive")).click();
+            $(byText("Impressive")).click();
         });
 
         step("проверяем что нажали Impressive", (step) -> {
-        $(".text-success").shouldHave(text("Impressive"));
+            $(".text-success").shouldHave(text("Impressive"));
         });
     }
 }
