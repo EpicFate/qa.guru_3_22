@@ -118,8 +118,9 @@ public class demoqa_com extends TestBase {
     }
 
     @Test
+    @Feature("radio_buttons")
     @Owner("EpicFate")
-    @DisplayName("radio_button")
+    @DisplayName("radio_button_Yes-or-Impressive")
     @Link(url = "https://demoqa.com/radio-button", name = "https://demoqa.com/radio-button")
 
     void radio_button() {
