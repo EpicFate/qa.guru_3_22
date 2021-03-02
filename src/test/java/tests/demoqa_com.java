@@ -22,7 +22,7 @@ public class demoqa_com extends TestBase {
     @DisplayName("Student Registration Form")
     @Link(url = "https://demoqa.com/automation-practice-form", name = "https://demoqa.com/automation-practice-form")
 
-    void StudentRegistrationForm() {
+    void StudentRegistrationFormTest() {
         Faker faker = new Faker();
         FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-GB"), new RandomService());
 
@@ -116,14 +116,13 @@ public class demoqa_com extends TestBase {
         });
     }
 
-
     @Test
     @Feature("Elements")
     @Story("radio_button")
     @DisplayName("radio_button_Yes-or-Impressive")
     @Link(url = "https://demoqa.com/radio-button", name = "https://demoqa.com/radio-button")
 
-    void radio_button() {
+    void radio_buttonTest() {
 
         step("Открывем страницу c radio_button", (step) -> {
             open("https://demoqa.com/radio-button");
@@ -143,6 +142,32 @@ public class demoqa_com extends TestBase {
 
         step("проверяем что нажали Impressive", (step) -> {
             $(".text-success").shouldHave(text("Impressive"));
+        });
+    }
+
+    @Test
+    @AllureId("1783")
+    @DisplayName("Check Box Раскрытие всех папок")
+    @Story("Check Box")
+    @Feature("Elements")
+    @Link(url = "https://demoqa.com/checkbox", name = "https://demoqa.com/checkbox")
+
+    void checkboxTest() {
+
+        step("Открыть страницу https://demoqa.com/checkbox", (step) -> {
+            open("https://demoqa.com/checkbox");
+        });
+
+        step("Должны увидеть текст checkbox", (step) -> {
+            $(".main-header").shouldHave(text("Check Box"));
+        });
+
+        step("Нажимаем Expand all", () -> {
+            $(".rct-icon-expand-all").click();
+        });
+
+        step("проверяем что в списке есть Word File.doc", () -> {
+            $(".rct-node-expanded").shouldHave(text("Word File.doc"));
         });
     }
 }
