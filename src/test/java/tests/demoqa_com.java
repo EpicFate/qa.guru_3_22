@@ -15,9 +15,10 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Layer("web")
-@Feature("Form fill tests")
-@Story("Student registration")
+
 public class demoqa_com extends TestBase {
+    @Feature("Form fill tests")
+    @Story("Student registration")
     @Test
     @Owner("EpicFate")
     @DisplayName("Регистрация студента")
