@@ -11,3 +11,9 @@
 5. Добавьте мета-данные в проект в Allure TestOps
 
 6. Добавьте два ручных теста в раздел Test Cases, автоматизируйте один из них.
+
+### *Allure TestOps:*
+![allure screenshot](src/test/resources/images/allure_1.png)
+
+### *Jenkins:*
+![jenkins screenshot](src/test/resources/images/jenkins.png)
